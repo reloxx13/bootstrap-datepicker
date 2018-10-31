@@ -18,8 +18,11 @@
  * ========================================================= */
 
 (function(factory){
-    if (typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
+
+    if (typeof jQuery === "function" && jQuery.fn) {
+        factory(jQuery);
+    } else if (typeof define === "function" && define.amd) {
+        define(["jquery"], factory);
     } else if (typeof exports === 'object') {
         factory(require('jquery'));
     } else {
@@ -102,10 +105,10 @@
 
 	var Datepicker = function(element, options){
 		$.data(element, 'datepicker', this);
-    
+
 		this._events = [];
 		this._secondaryEvents = [];
-    
+
 		this._process_options(options);
 
 		this.dates = new DateArray();
