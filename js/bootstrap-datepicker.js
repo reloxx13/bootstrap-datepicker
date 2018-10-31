@@ -461,6 +461,7 @@
 
 			this.element.trigger({
 				type: event,
+				namespace: 'bsDatepicker',
 				date: local_date,
 				viewMode: this.viewMode,
 				dates: $.map(this.dates, this._utc_to_local),

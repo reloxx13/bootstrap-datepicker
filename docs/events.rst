@@ -6,8 +6,9 @@ Datepicker triggers a number of events in certain circumstances.  All events hav
 ::
 
     $('.datepicker').datepicker()
-        .on(picker_event, function(e) {
-            // `e` here contains the extra attributes
+        .on(picker_event, function(e){
+            # all the events are qualified by the namespace `bsDatepicker`. `picker_event` looks something like this: `show.bsDatepicker`
+            # `e` here contains the extra attributes
         });
 
 * ``date``: the relevant Date object, in local timezone.  For a multidate picker, this will be the latest date picked.
